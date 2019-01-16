@@ -1,8 +1,7 @@
-import sayHello from "./hello"
-import sayGoodbye from "./goodbye"
-import SandwichMaker from "./sandwichMaker"
+import travelForm  from "./TravelBuilder"
 
-sayHello()
-sayGoodbye()
+travelForm.createAndAppendFormn()
 
-SandwichMaker.placeOrder("rye", "capicola", "provolone")
+console.log("main.js")
+    
+
