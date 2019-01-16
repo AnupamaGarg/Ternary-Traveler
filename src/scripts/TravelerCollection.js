@@ -1,5 +1,9 @@
 
 const TravelersCollection = {
+    getAllPlaces() {
+        return fetch("http://localhost:8088/places")
+        .then(response => response.json())
+      },
     
     getAllInterests() {
       return fetch("http://localhost:8088/interests")

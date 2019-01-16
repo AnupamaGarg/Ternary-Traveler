@@ -1,4 +1,5 @@
-import travelForm  from "./TravelBuilder"
+import travelForm  from "./TravelBulder"
+console.log(travelForm)
 
 travelForm.createAndAppendFormn()
 

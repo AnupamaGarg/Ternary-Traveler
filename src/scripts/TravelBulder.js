@@ -1,7 +1,7 @@
 import TravelersCollection from "./TravelerCollection"
 
 
-const travelForm ={ 
+const travelForm = {
 createAndAppendFormn(){
     console.log("Hello")
 
@@ -40,29 +40,32 @@ createAndAppendFormn(){
 //////////////////////////////// Place Field ////////////////////
  
 let InterestPlaceLabel = document.createElement("label")
-InterestPlaceLabel.textContent = "Place"
+InterestPlaceLabel.textContent = "Select Place"
 InterestPlaceLabel.setAttribute("for", "interest__place")
-InterestPlaceInput = document.createElement("select")
+let InterestPlaceInput = document.createElement("select")
 InterestPlaceInput.setAttribute("id", "interest__place")
-InterestPlaceInput.setAttribute("name", "interst__place")
+InterestPlaceInput.setAttribute("name", "interest__place")
 
-let LondonOption = document.createElement("option")
-LondonOption.textContent = "London"
-LondonOption.setAttribute("id", "place__london")
-let ParisOption = document.createElement("option")
-ParisOption.textContent = "Paris"
-ParisOption.setAttribute("id", "place__paris")
-let BerlinOption = document.createElement("option")
-BerlinOption.textContent = "Berlin"
-BerlinOption.setAttribute("id", "place__berlin")
+TravelersCollection.getAllPlaces()
+.then(places => {
+    places.forEach(place => {
+        let CountryName = document.createElement("option")
+                CountryName.textContent += `${place.name}`
+                CountryName.setAttribute("value", `${place.id}`)
+                CountryName.setAttribute("class", "interest_option")
+                InterestPlaceInput.appendChild(CountryName)
+ 
+        
+    })
 
-let SelectPlaceFragment = document.createDocumentFragment()
-SelectPlaceFragment.appendChild(LondonOption)
-SelectPlaceFragment.appendChild(ParisOption)
-SelectPlaceFragment.appendChild(BerlinOption)
+  })
+///////////////////// Save Button ///////////////////
 
-let InterestPlace = document.querySelector("#interest__place")
-InterestPlace.appendChild(SelectPlaceFragment)
+
+let saveButton = document.createElement("button")
+saveButton.textContent = "Save"
+saveButton.setAttribute("class", "interest__save")
+saveButton.addEventListener("click", this.handleAddNewInterest)
 
 
     InterestField.appendChild(InterestNameLabel)
@@ -80,17 +83,6 @@ InterestPlace.appendChild(SelectPlaceFragment)
 
 let formArticle = document.querySelector(".inputForm")
     formArticle.appendChild(InterestField)
-
-
-/////////////////////// Save Button ///////////////////
-
-let saveButton = document.createElement("button")
-saveButton.textContent = "Save"
-saveButton.setAttribute("class", "interest__save")
-
-// 2. Attach event listener to button in form
-saveButton.addEventListener("click", this.handleAddNewInterest)
-
 },
 
 handleAddNewInterest () {
