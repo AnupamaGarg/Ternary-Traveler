@@ -1,29 +1,42 @@
 {
-    "places": [
-      { 
-        "id": 1, 
-        "name": "London", 
-        "visa_required": false 
-      },
-      { 
-        "id": 2, 
-        "name": "Paris", 
-        "visa_required": true 
-      },
-      { 
-        "id": 3, 
-        "name": "Berlin", 
-        "visa_required": false
-      }
-    ],
-    "interests": [
-
-       { 
-        "place_id" : "",
-        "name" : "",
-        "description":"",
-        "cost":"",
-        "review":""
-        }
-        ]
-  }
+  "places": [
+    {
+      "id": 1,
+      "name": "London",
+      "visa_required": false
+    },
+    {
+      "id": 2,
+      "name": "Paris",
+      "visa_required": true
+    },
+    {
+      "id": 3,
+      "name": "Berlin",
+      "visa_required": false
+    }
+  ],
+  "interests": [
+    {
+      "name": "City Park",
+      "description": "Place For fun",
+      "cost": "$500",
+      "place": "2",
+      "id": 1
+    },
+    {
+      "name": "City Park",
+      "description": "Place For fun",
+      "cost": "$500",
+      "place": "2",
+      "id": 2
+    },
+    {
+      "name": "city park",
+      "description": "fun place",
+      "cost": "$ 100",
+      "place": "1",
+      "id": 3
+    }
+  ]
+}
