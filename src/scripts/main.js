@@ -4,8 +4,7 @@ console.log(travelForm)
 
 travelForm.createAndAppendFormn()
 
-// travelForm.clearForm()
-TravelList.createtravellist()
+TravelList.createTravellist()
 
 console.log("main.js")
     

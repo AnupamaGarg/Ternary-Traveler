@@ -3,7 +3,7 @@ import Travel from "./Travel"
 
 const TravelList = {
 
-    createtravellist() {
+    createTravellist() {
         TravelersCollection.getAllInterests()
             .then(allInterests => {
                 let interestDocFragment = document.createDocumentFragment()

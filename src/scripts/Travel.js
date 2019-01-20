@@ -1,6 +1,6 @@
-// import TravelersCollection from "./TravelerCollection"
-// import TravelList from "./TraveleList"
-// import TravelersColle from "./TravelerCollection"
+import TravelersCollection from "./TravelerCollection"
+import TravelList from "./TravelList";
+
 
 
 
@@ -14,7 +14,7 @@ const Travel ={
         interestName.textContent =  `Place Name:   ${travelObject.name}`
 
         let interestPlace = document.createElement("p")
-        interestPlace.textContent = ` Place id ${travelObject.place}`
+        interestPlace.textContent = ` Place id ${travelObject.placeId}`
     
         let interestDescription = document.createElement("p")
         interestDescription.textContent = `Description: ${travelObject.description}`
@@ -24,6 +24,19 @@ const Travel ={
       
         let interestReview = document.createElement("p")
         interestCost.textContent = `Review: ${travelObject.review}`
+
+        let deleteButton = document.createElement("button")
+        deleteButton.textContent = "Delete"
+        deleteButton.setAttribute("id",`interest--${travelObject.id}`)
+        deleteButton.addEventListener("click",()=> {
+        let interestId = event.target.id.split("--")[1]
+        TravelersCollection.deleteInterest(interestId)
+        .then(response =>{
+            TravelList.createTravellist()
+        })
+
+        })
+
       
         
 
@@ -34,6 +47,8 @@ const Travel ={
         travelArticle.appendChild(interestDescription)
         travelArticle.appendChild(interestCost)
         travelArticle.appendChild(interestReview)
+        travelArticle.appendChild(deleteButton)
+
         travelArticle.appendChild(horizontalRule)
 
 

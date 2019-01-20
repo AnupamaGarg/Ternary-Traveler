@@ -1,4 +1,6 @@
 import TravelersCollection from "./TravelerCollection"
+import TravelList from "./TravelList";
+
 
 
 const travelForm = {
@@ -66,7 +68,7 @@ const travelForm = {
             .then(places => {
                 places.forEach(place => {
                     let placeName = document.createElement("option")
-                    placeName.textContent += `${place.Country}`
+                    placeName.textContent += `${place.name}`
                     placeName.setAttribute("value", `${place.id}`)
                     placeName.setAttribute("class", "place_name")
                     InterestPlaceInput.appendChild(placeName)
@@ -142,10 +144,11 @@ const travelForm = {
 
 
         TravelersCollection.postNewInterest(newInterest)
-            // .then(response => {
-            //     console.log("Promise")
-            //     travelForm.clearForm()
-            // })
+             .then(response => {
+                //  console.log("Promise")
+                // travelForm.clearForm()
+               TravelList.createTravellist()
+            })
     }
 
     
