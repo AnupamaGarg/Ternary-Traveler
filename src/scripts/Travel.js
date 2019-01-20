@@ -11,32 +11,36 @@ const Travel ={
         travelArticle.setAttribute("id", `travel--${travelObject.id}`)
         
         let interestName = document.createElement("h3")
-        interestName.textContent =  `Place Name:   ${travelObject.name}`
+        interestName.textContent =  travelObject.name
 
         let interestPlace = document.createElement("p")
-        interestPlace.textContent = ` Place id ${travelObject.placeId}`
+        interestPlace.textContent = ` PlaceId:  ${travelObject.placeId}`
     
         let interestDescription = document.createElement("p")
-        interestDescription.textContent = `Description: ${travelObject.description}`
+        interestDescription.textContent = `Description:  ${travelObject.description}`
     
         let interestCost = document.createElement("p")
         interestCost.textContent = `Cost: ${travelObject.cost}`
       
         let interestReview = document.createElement("p")
-        interestCost.textContent = `Review: ${travelObject.review}`
+        interestReview.textContent = `Review:  ${travelObject.review}`
 
         let deleteButton = document.createElement("button")
         deleteButton.textContent = "Delete"
         deleteButton.setAttribute("id",`interest--${travelObject.id}`)
         deleteButton.addEventListener("click",()=> {
-        let interestId = event.target.id.split("--")[1]
-        TravelersCollection.deleteInterest(interestId)
-        .then(response =>{
-            TravelList.createTravellist()
-        })
+            let interestId = event.target.id.split("--")[1]
+            if(confirm("Want to delete?"))
+              
+              TravelersCollection.deleteInterest(interestId)
+               .then(r=>{
+                TravelList.createTravellist()
+               })
+        
+       
 
         })
-
+        
       
         
 
@@ -50,9 +54,11 @@ const Travel ={
         travelArticle.appendChild(deleteButton)
 
         travelArticle.appendChild(horizontalRule)
+        
 
 
         return travelArticle
+        
 
         
 

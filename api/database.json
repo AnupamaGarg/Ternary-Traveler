@@ -16,5 +16,14 @@
       "visa_required": false
     }
   ],
-  "interests": []
+  "interests": [
+    {
+      "name": "Kids park",
+      "description": "Place to play for kids",
+      "placeId": "1",
+      "cost": "100",
+      "review": "",
+      "id": 1
+    }
+  ]
 }

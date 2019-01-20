@@ -144,11 +144,9 @@ const travelForm = {
 
 
         TravelersCollection.postNewInterest(newInterest)
-             .then(response => {
-                //  console.log("Promise")
-                // travelForm.clearForm()
+             .then(r=>{
                TravelList.createTravellist()
-            })
+             })
     }
 
     
