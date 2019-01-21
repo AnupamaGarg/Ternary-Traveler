@@ -69,8 +69,8 @@
       "name": "park",
       "placeId": "1",
       "description": "kids park",
-      "cost": "100",
-      "review": "vvvvvvvv",
+      "cost": "free",
+      "review": "Nice Park",
       "id": 8
     }
   ]

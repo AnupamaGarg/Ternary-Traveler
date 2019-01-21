@@ -4,7 +4,7 @@ import Travel from "./Travel"
 const TravelList = {
 
     createTravellist() {
-        TravelersCollection.getAllInterests()
+        TravelersCollection.getAllInterestsAndPlaces()
             .then(allInterests => {
                 let interestDocFragment = document.createDocumentFragment()
 

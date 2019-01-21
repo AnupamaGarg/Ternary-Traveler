@@ -39,12 +39,12 @@ const editInterest={
         let interestReviewLabel = document.createElement("label")
         interestReviewLabel.textContent = "Review: "
         let interestReviewInput = document.createElement("input")
-        interestReviewInput.value = ""
-        // interestReviewInput.value = ObjectToEdit.review
-    
+        // interestReviewInput.value = ""
+        interestReviewInput.value = ObjectToEdit.review
         interestReviewField.appendChild(interestReviewLabel)
         interestReviewField.appendChild(interestReviewInput)
-
+        interestReviewInput.value = ObjectToEdit.review
+      
         let updateButton = document.createElement("button")
         updateButton.textContent = "Update"
         console.log(updateButton)

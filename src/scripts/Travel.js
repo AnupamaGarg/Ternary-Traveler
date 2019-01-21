@@ -15,13 +15,13 @@ const Travel ={
         interestName.textContent =  travelObject.name
 
         let interestPlace = document.createElement("p")
-        interestPlace.textContent = ` Place:  ${travelObject.placeId}`
+        interestPlace.textContent = ` Place:  ${travelObject.place.name}`
     
         let interestDescription = document.createElement("p")
         interestDescription.textContent = `Description:  ${travelObject.description}`
     
         let interestCost = document.createElement("p")
-        interestCost.textContent = `Cost: ${travelObject.cost}`
+        interestCost.textContent = `Cost : ${travelObject.cost}`
       
         let interestReview = document.createElement("p")
         interestReview.textContent = `Review: ${travelObject.review}`
@@ -66,7 +66,10 @@ const Travel ={
         travelArticle.appendChild(interestPlace)
         travelArticle.appendChild(interestDescription)
         travelArticle.appendChild(interestCost)
-        travelArticle.appendChild(interestReview)
+        if (travelObject.review.length>0){
+          travelArticle.appendChild(interestReview)
+        }
+        // travelArticle.appendChild(interestReview)
         travelArticle.appendChild(deleteButton)
         travelArticle.appendChild(editButton)
 
