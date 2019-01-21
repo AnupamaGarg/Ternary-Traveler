@@ -18,12 +18,60 @@
   ],
   "interests": [
     {
-      "name": "Kids park",
-      "description": "Place to play for kids",
+      "name": "Coca-Cola London Eye",
+      "description": "The London Eye is a cantilevered observation wheel on the South Bank of the River Thames in London. It is Europe's tallest cantilevered observation wheel, is the most popular paid tourist attraction in the United Kingdom with over 3.75 million visitors annually, and has made many appearances in popular culture",
       "placeId": "1",
-      "cost": "100",
+      "cost": "550",
       "review": "",
-      "id": 1
+      "id": 2
+    },
+    {
+      "name": "Buckingham Palace",
+      "description": "Buckingham Palace is the London residence and administrative headquarters of the monarch of the United Kingdom. Located in the City of Westminster, the palace is often at the centre of state occasions and royal hospitality. It has been a focal point for the British people at times of national rejoicing and mourning. ",
+      "placeId": "1",
+      "cost": "400",
+      "review": "",
+      "id": 3
+    },
+    {
+      "name": "Brandenburg Gate",
+      "description": "The Brandenburg Gate is an 18th-century neoclassical monument in Berlin, built on the orders of Prussian king Frederick William II after the successful restoration of order during the early Batavian Revolution.",
+      "placeId": "3",
+      "cost": "400",
+      "review": "",
+      "id": 4
+    },
+    {
+      "name": "Alexanderplatz",
+      "description": "Alexanderplatz is a large public square and transport hub in the central Mitte district of Berlin, near the Fernsehturm. Berliners often call it simply Alex, referring to a larger neighbourhood stretching from Mollstraße in the northeast to Spandauer Straße and the Rotes Rathaus in the southwest.",
+      "placeId": "3",
+      "cost": "470",
+      "review": "",
+      "id": 5
+    },
+    {
+      "name": "Eiffel Tower",
+      "description": "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower.",
+      "placeId": "2",
+      "cost": "300",
+      "review": "",
+      "id": 6
+    },
+    {
+      "name": "Louvre Museum",
+      "description": "The Louvre, or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
+      "placeId": "2",
+      "cost": "499",
+      "review": "",
+      "id": 7
+    },
+    {
+      "name": "park",
+      "placeId": "1",
+      "description": "kids park",
+      "cost": "100",
+      "review": "vvvvvvvv",
+      "id": 8
     }
   ]
 }

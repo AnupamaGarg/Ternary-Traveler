@@ -4,20 +4,25 @@ import TravelList from "./TravelList";
 
 
 const travelForm = {
-    // clearForm() {
-    //     document.querySelector("#interest__name").value = ""
-    //     document.querySelector("#interest__description").value = ""
-    // },
+    clearForm() {
+        document.querySelector("#interest__name").value = ""
+        document.querySelector("#interest__description").value = ""
+        document.querySelector("#interest__cost").value =""
+        document.querySelector("#interest__place").value =""
+    },
 
     createAndAppendFormn() {
         console.log("Hello")
 
-        ////////////Heading of the Form //////////////////
-        let formHeader = document.createElement("h3")
-        formHeader.textContent = "The Ternary Traveler"
+        
 
         let InterestField = document.createElement("div")
         let lineBreak = document.createElement("br")
+
+
+        ////////////Heading of the Form //////////////////
+        let formHeader = document.createElement("h3")
+        formHeader.textContent = "The Ternary Traveler"
 
         ////////////////////  Name Field ////////////////////
         let InterestNameLabel = document.createElement("label")
@@ -56,12 +61,12 @@ const travelForm = {
         InterestPlaceInput.setAttribute("id", "interest__place")
         InterestPlaceInput.setAttribute("name", "interest__place")
 
-        let InterestReviewLabel = document.createElement("label")
-        InterestReviewLabel.textContent = "Review "
-        InterestReviewLabel.setAttribute("for", "interest__review")
-        let InterestReviewInput = document.createElement("input")
-        InterestReviewInput.setAttribute("id", "interest__review")
-        InterestReviewInput.setAttribute("name", "interst__review")
+        // let InterestReviewLabel = document.createElement("label")
+        // InterestReviewLabel.textContent = "Review "
+        // InterestReviewLabel.setAttribute("for", "interest__review")
+        // let InterestReviewInput = document.createElement("input")
+        // InterestReviewInput.setAttribute("id", "interest__review")
+        // InterestReviewInput.setAttribute("name", "interst__review")
     
 
         TravelersCollection.getAllPlaces()
@@ -70,7 +75,7 @@ const travelForm = {
                     let placeName = document.createElement("option")
                     placeName.textContent += `${place.name}`
                     placeName.setAttribute("value", `${place.id}`)
-                    placeName.setAttribute("class", "place_name")
+                    placeName.setAttribute("class", `${place.name}`)
                     InterestPlaceInput.appendChild(placeName)
                 
 
@@ -86,7 +91,7 @@ const travelForm = {
         saveButton.setAttribute("class", "interest__save")
         saveButton.addEventListener("click", this.handleAddNewInterest)
 
-
+        InterestField.appendChild(formHeader)
         InterestField.appendChild(InterestNameLabel)
         InterestField.appendChild(lineBreak)
         InterestField.appendChild(InterestNameInput)
@@ -106,9 +111,9 @@ const travelForm = {
         InterestField.appendChild(InterestPlaceInput)
         InterestField.appendChild(lineBreak)
 
-        InterestField.appendChild(InterestReviewLabel)
-        InterestField.appendChild(InterestReviewInput)
-        InterestField.appendChild(lineBreak)
+        // InterestField.appendChild(InterestReviewLabel)
+        // InterestField.appendChild(InterestReviewInput)
+        // InterestField.appendChild(lineBreak)
 
         InterestField.appendChild(saveButton)
 
@@ -126,7 +131,7 @@ const travelForm = {
         let inputInterestDescription = document.querySelector("#interest__description").value
         let inputInterestCost = document.querySelector("#interest__cost").value
         let inputInterestPlaceId = document.querySelector("#interest__place").value
-        let inputInterestReview = document.querySelector("#interest__review").value
+        let inputInterestReview = ""
         
 
 
@@ -138,7 +143,7 @@ const travelForm = {
             description: inputInterestDescription,
             placeId:inputInterestPlaceId,
             cost: inputInterestCost,
-            review:inputInterestReview,
+            review: inputInterestReview
             
         }
 
@@ -146,6 +151,7 @@ const travelForm = {
         TravelersCollection.postNewInterest(newInterest)
              .then(r=>{
                TravelList.createTravellist()
+               travelForm.clearForm()
              })
     }
 

@@ -1,5 +1,6 @@
 import TravelersCollection from "./TravelerCollection"
 import TravelList from "./TravelList";
+import editInterest from "./editForm"
 
 
 
@@ -14,7 +15,7 @@ const Travel ={
         interestName.textContent =  travelObject.name
 
         let interestPlace = document.createElement("p")
-        interestPlace.textContent = ` PlaceId:  ${travelObject.placeId}`
+        interestPlace.textContent = ` Place:  ${travelObject.placeId}`
     
         let interestDescription = document.createElement("p")
         interestDescription.textContent = `Description:  ${travelObject.description}`
@@ -23,7 +24,21 @@ const Travel ={
         interestCost.textContent = `Cost: ${travelObject.cost}`
       
         let interestReview = document.createElement("p")
-        interestReview.textContent = `Review:  ${travelObject.review}`
+        interestReview.textContent = `Review: ${travelObject.review}`
+        // interestReview.textContent = ""
+
+        let editButton = document.createElement("button")
+        editButton.textContent = "Edit"
+
+        editButton.addEventListener("click", () => {
+          let articleId = event.target.parentNode.id
+          let interestId = articleId.split("--")[1]
+          TravelersCollection.getInterest(interestId)
+          .then(response => {
+            editInterest.createAndAppendEditForm(articleId, response)
+          })
+        })
+    
 
         let deleteButton = document.createElement("button")
         deleteButton.textContent = "Delete"
@@ -39,6 +54,7 @@ const Travel ={
         
        
 
+
         })
         
       
@@ -52,6 +68,7 @@ const Travel ={
         travelArticle.appendChild(interestCost)
         travelArticle.appendChild(interestReview)
         travelArticle.appendChild(deleteButton)
+        travelArticle.appendChild(editButton)
 
         travelArticle.appendChild(horizontalRule)
         
